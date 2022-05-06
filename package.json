@@ -1,5 +1,14 @@
+
 {
+  "name": "ToDoList",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite"
+  },
   "dependencies": {
     "vite": "^2.9.7"
+
   }
 }

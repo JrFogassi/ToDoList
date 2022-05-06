@@ -1,4 +1,4 @@
-//armazena as tasks, funciona como um banco
+//armazena as tasks, funciona como armazenamento
 let dataTask = [
     {newTask: "Malhar", taskStatus: ""},  
     {newTask: "Estudar", taskStatus:"checked"}
@@ -8,10 +8,11 @@ let dataTask = [
 const addTask = (newTask, taskStatus) => {
     const task = document.createElement('label');
     task.classList.add ('todo-tasks');
-    task.innerHTML = `<input type=checkbox ${taskStatus}> <div>${newTask}</div> <input type=button>`;
+    task.innerHTML = `<span></span> <input type=checkbox ${taskStatus}> <div>${newTask}</div> `;
 
     document.getElementById("tasks-list").appendChild(task);
 }
+
 
 //remove a ultima task criada quando a tela é atualizada
 const clearTaskField = () => {
@@ -34,7 +35,7 @@ const createTask = (event) => {
     if (create === "Enter"){
         dataTask.push({newTask: taskBox, taskStatus:"checked"});
         refreshTasksField();
-        
+
         //apaga o campo de texto
         event.target.value = "";
     } 
