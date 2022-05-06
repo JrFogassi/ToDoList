@@ -81,6 +81,10 @@ body {
     
 }
 
+#completed h2 {
+    position: relative;
+}
+
 /* .add-task-field button{
     position: absolute;
     height: 18px;

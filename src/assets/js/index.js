@@ -1,18 +1,24 @@
 //armazena as tasks, funciona como armazenamento
 let dataTask = [
-    {newTask: "Malhar", taskStatus: ""},  
-    {newTask: "Estudar", taskStatus:""}
+    // {newTask: "Malhar", taskStatus: ""},  
+    // {newTask: "Estudar", taskStatus:""}
     ];
+
 
     // adiciona uma task ao html, a tela
 const addTask = (newTask, taskStatus) => {
     const task = document.createElement('label');
     task.classList.add ('todo-tasks');
     task.innerHTML = `<span></span> <input type=checkbox ${taskStatus}> <div>${newTask}</div> `;
-
     document.getElementById("tasks-list").appendChild(task);
 }
 
+// const completedTasks = () => {
+//     const taskCompleted = document.createElement("label");
+//     taskCompleted.classList.add ("completed-list");
+//     taskCompleted.innerHTML = `<h2>Completed</h2>`;
+//     document.getElementById("completed").appendChild(taskCompleted);
+// }
 
 //remove a ultima task criada quando a tela é atualizada
 const clearTaskField = () => {
@@ -32,14 +38,23 @@ const refreshTasksField = () => {
 const createTask = (event) => {
     const create = event.key;
     const taskBox = event.target.value;
+    
     if (create === "Enter"){
         dataTask.push({newTask: taskBox, taskStatus:""});
+        dataTask.sort(function(a, b){
+            return (a.newTask > b.newTask) ? 1 : ((b.newTask > a.newTask) ? -1 : 0);
+            
+        });
         refreshTasksField();
 
         //apaga o campo de texto
         event.target.value = "";
     } 
 }
+
+
+    
+    
 
 document.getElementById("add-task").addEventListener("keypress", createTask);
 
