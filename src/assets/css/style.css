@@ -6,6 +6,7 @@ body {
     top: 0px;
     background: #38404B;
     border-radius: 65px;
+    max-width: 1280px;
 }
 
 ::placeholder {
@@ -81,9 +82,11 @@ body {
     
 }
 
-#completed h2 {
+
+
+/* #completed h2 {
     position: relative;
-}
+} */
 
 /* .add-task-field button{
     position: absolute;
