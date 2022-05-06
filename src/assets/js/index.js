@@ -1,7 +1,7 @@
 //armazena as tasks, funciona como armazenamento
 let dataTask = [
     {newTask: "Malhar", taskStatus: ""},  
-    {newTask: "Estudar", taskStatus:"checked"}
+    {newTask: "Estudar", taskStatus:""}
     ];
 
     // adiciona uma task ao html, a tela
@@ -33,7 +33,7 @@ const createTask = (event) => {
     const create = event.key;
     const taskBox = event.target.value;
     if (create === "Enter"){
-        dataTask.push({newTask: taskBox, taskStatus:"checked"});
+        dataTask.push({newTask: taskBox, taskStatus:""});
         refreshTasksField();
 
         //apaga o campo de texto
